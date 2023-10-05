@@ -1,0 +1,29 @@
+body{margin: 8px;}
+.heading{
+    text-align: center;
+}
+
+.logss{
+    display: flex;
+    justify-content: flex-end;
+   gap: 20px;
+    padding-right: 20px;
+}
+.kanak{
+    display: flex;
+    gap: 20px;
+}
+.kanak p{
+    width: 100%;
+}
+.fnc{
+    font-weight: bold;
+    text-decoration: underline;
+}
+.paisa{
+    font-weight: bold;
+    font-size: 25px;
+}
+.oliche{
+    display: none;
+}
