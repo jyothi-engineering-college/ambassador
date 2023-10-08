@@ -51,3 +51,12 @@ padding-right: 30px;
 padding-top: 5px;
 padding-bottom: 5px;
 }
+@media only screen and (max-width: 750px) {
+    .logiman{
+        display: block;
+    }
+  }
+  .kliqs{
+    display: flex;
+    gap: 50px;
+  }

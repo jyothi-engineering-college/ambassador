@@ -6,6 +6,8 @@ import { auth } from "../src/config/firebase"; // Update the import path
 
 import LoginComponent from "./components/LoginComponent";
 import ProtectedPage from "./components/ProtectedPage";
+import Register from "./components/Register"; // Add this line
+
 
 function App() {
   const [user, setUser] = useState(null);
@@ -27,6 +29,7 @@ function App() {
           <Route path="/" element={user ? <Navigate to="/protected" /> : <LoginComponent />} />
           <Route path="/login" element={<LoginComponent />} />
           <Route path="/protected" element={user ? <ProtectedPage /> : <Navigate to="/login" />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
       </div>
     </Router>

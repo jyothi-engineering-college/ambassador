@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth"; // Import getAuth and signInWithEmailAndPassword
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import './login.css';
 import loginpadam from './img/loginpadam.svg';
 
@@ -10,43 +10,52 @@ function LoginComponent() {
   const [password, setPassword] = useState("");
 
   const handleLogin = async () => {
-    const authInstance = getAuth(); // Initialize auth instance
+    const authInstance = getAuth();
     try {
-      await signInWithEmailAndPassword(authInstance, email, password); // Sign in with email and password
-      // User successfully logged in, you can now redirect to the protected page.
+      await signInWithEmailAndPassword(authInstance, email, password);
       navigate("/protected");
     } catch (error) {
-        alert("Sorry, Invalid Username or Password !");
-      // Handle and display the error to the user, if needed
+      alert("Sorry, Invalid Username or Password!");
     }
+  };
+
+  // Function to navigate to the registration page
+  const navigateToRegister = () => {
+    navigate("/register");
   };
 
   return (
     <div>
-    <div className="loginman">
-      <div className="padam">
-        <img className="lopa" src={loginpadam} alt="login"></img>
+      <div className="loginman">
+        <div className="padam">
+          <img className="lopa" src={loginpadam} alt="login"></img>
+        </div>
+        <div className="worker">
+          <h2>Get Started with Tharang 23</h2>
+          <div className="vara"></div>
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <br></br>
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <br></br>
+          <div className="kliqs">
+          <button onClick={handleLogin}>Login</button>
+          
+          {/* Button to navigate to the registration page */}
+          <button onClick={navigateToRegister}>Register</button>
+          </div>
+        </div>
       </div>
-    <div className="worker">
-      <h2>Get Started with Tharang 23</h2>
-      <div className="vara"></div>
-      <input
-        type="email"
-        placeholder="Email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <br></br>
-      <input
-        type="password"
-        placeholder="Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <br></br>
-      <button onClick={handleLogin}>Login</button>
-    </div></div>
-    <p><center>Welcome to Tharang 23 2.0 Dashboard</center></p>
+      <p><center>Welcome to Tharang 23 2.0 Dashboard</center></p>
     </div>
   );
 }
