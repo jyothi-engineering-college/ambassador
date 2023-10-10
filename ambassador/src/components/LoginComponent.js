@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import './login.css';
-import loginpadam from './img/loginpadam.svg';
+import loginpadam from './img/tharang.png';
 
 function LoginComponent() {
   const navigate = useNavigate();
@@ -31,7 +31,8 @@ function LoginComponent() {
           <img className="lopa" src={loginpadam} alt="login"></img>
         </div>
         <div className="worker">
-          <h2>Get Started with Tharang 23</h2>
+          <p className="jyo">Jyothi Engineering College</p>
+          <h2>Campus Ambassador Login</h2>
           <div className="vara"></div>
           <input
             type="email"

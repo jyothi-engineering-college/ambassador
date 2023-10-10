@@ -5,8 +5,7 @@ import { onAuthStateChanged, signOut } from "firebase/auth";
 import {
   getFirestore,
   collection,
-  getDocs,
-  addDoc, // Import addDoc to add data to Firestore
+  getDocs, // Import addDoc to add data to Firestore
 } from "firebase/firestore";
 import './pstyle.css';
 
@@ -16,9 +15,6 @@ function ProtectedPage() {
   const [userEmail, setUserEmail] = useState("");
   const [user, setUser] = useState(null);
   const [additionalUserData, setAdditionalUserData] = useState(null);
-  const [name, setName] = useState(""); // State for the Name field
-  const [movie, setMovie] = useState(""); // State for the Movie field
-  const [username, setUsername] = useState(""); // State for the Username field
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -77,35 +73,10 @@ function ProtectedPage() {
     }
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault(); // Prevent the form from submitting normally
-
-    // Create a new document in the "musics" collection with Name, Movie, and Username fields
-    const db = getFirestore();
-    const musicsCollection = collection(db, "musics");
-
-    try {
-      await addDoc(musicsCollection, {
-        Name: name,
-        Movie: movie,
-        Username: username, // Include the Username field
-      });
-
-      // Clear the form fields after successful submission
-      setName("");
-      setMovie("");
-      setUsername("");
-
-      alert("Data submitted successfully!");
-    } catch (error) {
-      console.error("Error submitting data to Firestore", error);
-      alert("Data submission failed!");
-    }
-  };
-
+  
   return (
     <div>
-      <h2 className="heading">Virtuosi Music Band Systems</h2>
+      <h2 className="heading">Campus Ambassador</h2>
       {additionalUserData && (
         <div className="logss">
           <p className="howd">Howdy, {additionalUserData.name}</p>
@@ -129,39 +100,7 @@ function ProtectedPage() {
           <p><b>College:</b><br></br>{item.college}</p>
         </div>
       ))}
-      
-      {/* Add a form to submit data to Firestore */}
-      <form onSubmit={handleSubmit}>
-        <h3>Submit Music Data</h3>
-        <div>
-          <label>Name:</label>
-          <input
-            type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-          />
-        </div>
-        <div>
-          <label>Movie:</label>
-          <input
-            type="text"
-            value={movie}
-            onChange={(e) => setMovie(e.target.value)}
-            required
-          />
-        </div>
-        <div>
-          <label>Username:</label>
-          <input
-            type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            required
-          />
-        </div>
-        <button type="submit">Submit</button>
-      </form>
+
     </div>
   );
 }
