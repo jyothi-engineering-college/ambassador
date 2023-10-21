@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import './login.css';
 import loginpadam from './img/tharang.png';
+import 'animate.css';
 
 function LoginComponent() {
   const navigate = useNavigate();
@@ -25,7 +26,7 @@ function LoginComponent() {
   };
 
   return (
-    <div>
+    <div className="animate__animated animate__jackInTheBox">
       <div className="loginman">
         <div className="padam">
           <img className="lopa" src={loginpadam} alt="login"></img>

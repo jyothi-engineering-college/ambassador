@@ -1,8 +1,17 @@
-body{margin: 8px;}
+body{margin: 0;}
 .heading{
-    text-align: center;
+    color: #000;
+font-family: Nunito;
+font-size: 32px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
 }
-
+.varaa{
+    width: 86px;
+height: 3px;
+background: #000;
+}
 .logss{
     display: flex;
     justify-content: flex-end;
@@ -27,3 +36,138 @@ body{margin: 8px;}
 .oliche{
     display: none;
 }
+.appuram
+{
+    height: 100vh;
+    width: 10%;
+    background-color: #BF2941;
+    display: block;
+    border-radius: 0px 28px 28px 0px;
+    padding-top: 36px;
+    padding-left: 63px;
+    padding-right: 63px;
+    text-align: center;
+}
+.motham{
+    display: flex;
+    gap: 38px;
+}
+.aalname{
+    color: #FFF;
+text-align: center;
+font-family: Nunito;
+font-size: 24px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+margin: 10px;
+}
+.hwdy{
+    margin: 5px;
+    color: #FFF;
+text-align: center;
+font-family: Nunito;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+.plog{
+    margin: 10px;
+}
+.clgs{
+    display: flex;
+    gap: 2px;
+    width: 100%;
+    justify-content: flex-end;
+    
+}
+.wrap{
+    width: 100%;
+    margin-top: 5px;
+}
+.det{
+    border-radius: 24px;
+background: #0E97BA;
+/* shadows */
+box-shadow: 0px 4px 25px 6px rgba(0, 0, 0, 0.25);
+padding: 10px;
+margin: 20px;
+width: 40%;
+}
+.detsub{
+    display: flex;
+    justify-content: space-around;
+    
+}
+.kunj{
+    color: #FFF;
+font-family: Nunito;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+margin: 5px;
+}
+.valth{
+    color: #FFF;
+    font-family: Nunito;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    margin: 5px;
+}
+#customers {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 10px;
+  }
+  
+  #customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #customers tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #customers tr:hover {background-color: #ddd;}
+  
+  #customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #0E97BA;
+    color: white;
+  }
+  @media only screen and (max-width: 900px) {
+   .motham{
+    display: block;
+    margin: 10px;
+    }
+    .appuram{
+        height: auto;
+        width: 100%;
+        margin: 0;
+        padding-left: 0px;
+    padding-right: 0px;
+    border-radius: 0px 0px 28px 28px;
+    }
+    body{padding: 0;}
+    #customers{
+        width: 90%;
+        
+    }
+    .det{
+        margin: 25px;
+width: 85%;
+    }
+    .valth{
+        font-size: 20px;
+    }
+    .detsub{
+        display: block;
+    }
+    
+  }
+

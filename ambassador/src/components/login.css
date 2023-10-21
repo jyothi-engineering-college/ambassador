@@ -79,4 +79,12 @@ body{
     gap:10px;
 
   }
+  input{
+    width: 85%;
+  }
+  .worker
+  {
+    margin: 10px;
+  }
+
   }

@@ -8,6 +8,10 @@ import {
   getDocs, // Import addDoc to add data to Firestore
 } from "firebase/firestore";
 import './pstyle.css';
+import Man from './img/man.svg';
+import College from './img/clg.png';
+import Thara from './img/image 3.png';
+import 'animate.css';
 
 function ProtectedPage() {
   const navigate = useNavigate();
@@ -75,34 +79,71 @@ function ProtectedPage() {
 
   
   return (
-    <div>
-      <h2 className="heading">Campus Ambassador</h2>
+    <div className="motham animate__animated animate__slideInLeft">
       {additionalUserData && (
-        <div className="logss">
-          <p className="howd">Howdy, {additionalUserData.name}</p>
-          <button onClick={handleLogout}>Logout</button>
+      <div className="appuram">
+        <img src={Man} alt="man"></img>
+        <p className="hwdy">Howdy,</p>
+          <p className="aalname">{additionalUserData.name}</p>
+          <button className="plog" onClick={handleLogout}>Logout</button>
         </div>
       )}
+      <div className="wrap">
+        <div className="clgs">
+          <img src={College} alt="college"/>
+          <img src={Thara} alt="Tharang"/>
+        </div>
+      <h2 className="heading">Campus Ambassador Manager</h2>
+      <div className="varaa"></div>
       {additionalUserData && (
         <div>
-          <p><b>About Me</b></p>
+          <div className="detsub">
+        <div className="det">
+          <p className="kunj">Email</p>
           {user && (
-          <p>Email : {userEmail}</p>
+          <p className="valth">{userEmail}</p>
           )}
-          <p>College : {additionalUserData.college}</p>
-          <p>referral Id : {additionalUserData.refid}</p>
         </div>
+        <div className="det">
+        <p className="kunj">College</p>
+        <p className="valth">{additionalUserData.college}</p>
+      </div></div>
+      <div className="detsub">
+      <div className="det">
+        <p className="kunj">Referral ID</p>
+        <p className="valth">{additionalUserData.refid}</p>
+      </div>
+      <div className="det">
+        <p className="kunj">Points</p>
+        <p className="valth">{additionalUserData.point}</p>
+      </div></div>
+      </div>
       )}
-      <p className="fnc">Common Financial Updates</p>
-      {data.map((item, index) => (
-        <div className="kanak" key={index}>
-          <p><b>Name:</b><br></br>{item.name}</p>
-          <p><b>College:</b><br></br>{item.college}</p>
-        </div>
-      ))}
+      
+      
+      <p className="heading">Leaderboard Updates</p>
+      <div className="varaa"></div>
+      <div className="kanak">
+  <table id="customers">
+    <tr>
+      <th>Sl No.</th>
+      <th>Name</th>
+      <th>College</th>
+      <th>Points</th>
+    </tr>
+    {data.map((item, index) => (
+      <tr key={index}>
+        <td>{item.no}</td>
+        <td>{item.name}</td>
+        <td>{item.college}</td>
+        <td>{item.point}</td>
+      </tr>
+    ))}
+  </table>
+</div>
 
+</div>
     </div>
   );
 }
-
 export default ProtectedPage;
